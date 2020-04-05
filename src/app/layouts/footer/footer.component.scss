@@ -1,0 +1,28 @@
+$socialMedia-heigt: 64px;
+
+.navbar {
+  &__logo {
+    max-width: 260px;
+    width: 80%;
+  }
+  &__title {
+    color: #0654ae;
+  }
+  &__menu {
+    line-height: 2em;
+  }
+  &__address {
+    font-size: 0.9em;
+  }
+}
+
+.socialMedia {
+  &__title {
+    color: #b2b2b2;
+  }
+  &__media {
+    width: $socialMedia-heigt;
+    height: $socialMedia-heigt;
+    display: inline-block;
+  }
+}
