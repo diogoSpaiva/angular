@@ -1,26 +1,26 @@
-<form class="m-5">
+<form class="m-5" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col-12 col-lg-6 field">
-      <input type="text" id="fieldFirstName" placeholder=" ">
+      <input type="text" id="fieldFirstName" placeholder=" " formControlName="firstName">
       <label for="fieldFirstName">Primeiro nome</label>
     </div>
     <div class="col-12 col-lg-6 field">
-      <input type="text" id="fieldLastName" placeholder=" ">
+      <input type="text" id="fieldLastName" placeholder=" " formControlName="lastName">
       <label for="fieldLastName">Último nome</label>
     </div>
   </div>
   <div class="row">
     <div class="col-12 col-lg-6 field">
-      <input type="text" id="fieldCPF" placeholder=" ">
+      <input type="text" id="fieldCPF" placeholder=" " formControlName="cpf" mask="000.000.000-00">
       <label for="fieldCPF">CPF</label>
     </div>
     <div class="col-12 col-lg-6 field">
-      <input type="data" id="fieldDateBirth" placeholder=" ">
+      <input type="date" id="fieldDateBirth" placeholder=" " formControlName="dateBirth">
       <label for="fieldDateBirth">Data de nascimento</label>
     </div>
   </div>
   <div class="field">
-    <input type="mail" id="fieldEmail" placeholder=" ">
+    <input type="mail" id="fieldEmail" placeholder=" " formControlName="email">
     <label for="fieldEmail">E-mail</label>
   </div>
 
@@ -28,33 +28,35 @@
 
 
 
-  <h5 class="mt-5">ACOMPANHANTE 1</h5>
-  <div class="row">
-    <div class="col-12 col-lg-6 field">
-      <input type="text" id="fieldCompanionFirstName" placeholder=" ">
-      <label for="fieldCompanionFirstName">Primeiro nome</label>
+  <div formGroupName="companion" [hidden]="!form.value.addCompanion">
+    <h5 class="mt-5">ACOMPANHANTE 1</h5>
+    <div class="row">
+      <div class="col-12 col-lg-6 field">
+        <input type="text" id="fieldCompanionFirstName" placeholder=" " formControlName="firstName">
+        <label for="fieldCompanionFirstName">Primeiro nome</label>
+      </div>
+      <div class="col-12 col-lg-6 field">
+        <input type="text" id="fieldCompanionLastName" placeholder=" " formControlName="lastName">
+        <label for="fieldCompanionLastName">Último nome</label>
+      </div>
     </div>
-    <div class="col-12 col-lg-6 field">
-      <input type="text" id="fieldCompanionLastName" placeholder=" ">
-      <label for="fieldCompanionLastName">Último nome</label>
+    <div class="row">
+      <div class="col-12 col-lg-6 field">
+        <input type="text" id="fieldCompanionCPF" placeholder=" " formControlName="cpf" mask="000.000.000-00">
+        <label for="fieldCompanionCPF">CPF</label>
+      </div>
+      <div class="col-12 col-lg-6 field">
+        <input type="date" id="fieldCompanionDateBirth" placeholder=" " formControlName="dateBirth">
+        <label for="fieldCompanionDateBirth">Data de nascimento</label>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-lg-6 field">
-      <input type="text" id="fieldCompanionCPF" placeholder=" ">
-      <label for="fieldCompanionCPF">CPF</label>
+    <div class="field">
+      <input type="mail" id="fieldCompanionEmail" placeholder=" " formControlName="email">
+      <label for="fieldCompanionEmail">E-mail</label>
     </div>
-    <div class="col-12 col-lg-6 field">
-      <input type="data" id="fieldCompanionDateBirth" placeholder=" ">
-      <label for="fieldCompanionDateBirth">Data de nascimento</label>
-    </div>
-  </div>
-  <div class="field">
-    <input type="mail" id="fieldCompanionEmail" placeholder=" ">
-    <label for="fieldCompanionEmail">E-mail</label>
   </div>
   <div class="form-check mt-5">
-    <input type="checkbox" id="fieldAddCompanion">
+    <input type="checkbox" id="fieldAddCompanion" formControlName="addCompanion">
     <label for="fieldAddCompanion">Adicionar acompanhante</label>
   </div>
 
@@ -64,33 +66,33 @@
 
   <h5 class="mt-5">DADOS DA ENTREGA</h5>
   <div class="field">
-    <input type="text" id="fieldZipCode" placeholder=" ">
+    <input type="text" id="fieldZipCode" placeholder=" " formControlName="zipCode" mask="00000-000">
     <label for="fieldZipCode">CEP</label>
   </div>
   <div class="field">
-    <input type="text" id="fieldAddress" placeholder=" ">
+    <input type="text" id="fieldAddress" placeholder=" " formControlName="address">
     <label for="fieldAddress">Endereço</label>
   </div>
   <div class="form-group">
     <label for="fieldCountry">País</label>
-    <select class="form-control" id="fieldCountry">
+    <select class="form-control" id="fieldCountry" formControlName="country">
       <option>1</option>
       <option>2</option>
     </select>
   </div>
   <div class="form-group">
     <label for="fieldState">Estado</label>
-    <select class="form-control" id="fieldState">
+    <select class="form-control" id="fieldState" formControlName="state">
       <option>1</option>
       <option>2</option>
     </select>
   </div>
   <div class="field">
-    <input type="text" id="fieldPhone" placeholder=" ">
+    <input type="text" id="fieldPhone" placeholder=" " formControlName="phone">
     <label for="fieldPhone">Telefone</label>
   </div>
   <div class="d-flex justify-content-end mt-5">
-    <button type="submit" class="px-5 py-3 border-0">ENVIAR</button>
+    <button type="submit" class="px-5 py-3 border-0" [disabled]="form.invalid">ENVIAR</button>
   </div>
 
 </form>

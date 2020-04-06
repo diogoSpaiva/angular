@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AddressFormComponent, TicketCouponComponent } from './';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask-2';
 
 @NgModule({
   declarations: [
@@ -9,7 +11,12 @@ import { AddressFormComponent, TicketCouponComponent } from './';
     TicketCouponComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot()
+
+
   ],
   exports:[
     AddressFormComponent,

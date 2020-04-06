@@ -1,22 +1,28 @@
 <main class="m-5">
+
   <section>
-    <img src="./assets/images/logo-otech.svg" alt="" class="float-left mr-2 img-fluid w-25">
+    <div class="imageTicket float-left mr-2 overflow-hidden">
+      <img *ngIf="movie" src="{{'https://image.tmdb.org/t/p/w500/'+ movie?.poster_path}}" alt="{{movie?.title}}" class="img-fluid">
+    </div>
     <p class="m-0">Ingresso</p>
-    <p>FILME: O mochileiro das galáxias</p>
-    <p class="textBlue">R$ 20,00</p>
+    <p>FILME: {{movie?.title}}</p>
+    <p class="textBlue">{{bill?.ticketValue | currency: 'R$'}}</p>
+    <span class="clearfix"></span>
   </section>
+
   <section class="border-top mt-4 pt-4">
     <div class="d-flex justify-content-between my-1">
       <strong>Sub Total</strong>
-      <span class="text-black-50">R$ 20,00</span>
+      <span class="text-black-50">{{bill?.subTotal | currency: 'R$'}}</span>
     </div>
     <div class="d-flex justify-content-between my-1">
       <strong>Frete</strong>
-      <span class="text-black-50">R$ 10,00</span>
+      <span class="text-black-50">{{bill?.shipping | currency: 'R$'}}</span>
     </div>
     <div class="d-flex justify-content-between my-4">
       <span class="font-weight-bolder">TOTAL</span>
-      <span class="font-weight-bolder textBlue">R$ 30,00</span>
+      <span class="font-weight-bolder textBlue">{{bill?.total | currency: 'R$'}}</span>
     </div>
   </section>
+
 </main>

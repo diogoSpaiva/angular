@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ticket-coupon',
   templateUrl: './ticket-coupon.component.html',
   styleUrls: ['./ticket-coupon.component.scss']
 })
-export class TicketCouponComponent implements OnInit {
+export class TicketCouponComponent {
+
+  @Input() public movie: [];
+  @Input() public bill: [];
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
