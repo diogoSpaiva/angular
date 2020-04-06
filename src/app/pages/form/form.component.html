@@ -7,13 +7,13 @@
       <h5 class="m-0">DADOS PESSOAIS</h5>
     </header>
     <div class="border-right">
-      <address-form></address-form>
+      <address-form [bill]="bill" (addCompanion)="addCompanion($event)"></address-form>
     </div>
   </section>
   <aside class="col-12 col-md-5 pl-0">
     <header class="p-4">
       <h5 class="m-0">SEU INGRESOS</h5>
     </header>
-    <ticket-coupon></ticket-coupon>
+    <ticket-coupon [movie]="movie" [bill]="bill"></ticket-coupon>
   </aside>
 </article>

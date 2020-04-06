@@ -1,3 +1,6 @@
-<p>
-  home works!
-</p>
+<article class="row d-flex justify-content-around">
+  <div class="card" *ngFor="let movie of listMovies?.results" routerLink="/ingresso/{{movie.id}}">
+    <img class="img-fluid" src="{{'https://image.tmdb.org/t/p/w500/'+ movie.poster_path}}" alt="">
+    <strong>{{movie.title}}</strong>
+  </div>
+</article>

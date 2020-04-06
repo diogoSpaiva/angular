@@ -5,7 +5,7 @@ import { HomeComponent, FormComponent } from './pages';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'ingresso', component: FormComponent },
+  { path: 'ingresso/:idMovie', component: FormComponent },
 ];
 
 @NgModule({

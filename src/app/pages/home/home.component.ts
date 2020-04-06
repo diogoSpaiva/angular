@@ -1,3 +1,4 @@
+import { HomeService } from './home.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  listMovies: [];
+
+  constructor(
+    private homeService: HomeService
+  ) {
+    this.homeService.getListMovies().subscribe((response) => {
+      this.listMovies = response;
+    });
+  }
 
   ngOnInit() {
   }
