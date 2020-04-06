@@ -2,3 +2,8 @@ aside header,
 section header {
   background-color: #f1f1f1;
 }
+@media (max-width: 768px) {
+  .border-right {
+    border: none!important;
+  }
+}

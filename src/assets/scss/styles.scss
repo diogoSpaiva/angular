@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-$headings-font-weight: 600;
-$border-color: #868686;
+@import './theme';
 
 * {
   font-family: "Poppins", sans-serif;
@@ -22,8 +21,10 @@ h6,
 .h3,
 .h4,
 .h5,
-.h6 {
-  font-weight: $headings-font-weight;
+.h6,
+b,
+strong {
+  font-weight: $font-bold-weight;
 }
 
 .border-right,

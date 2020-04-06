@@ -1,3 +1,5 @@
+@import './../../../assets/scss/theme';
+
 $socialMedia-heigt: 64px;
 
 .navbar {
@@ -6,7 +8,7 @@ $socialMedia-heigt: 64px;
     width: 80%;
   }
   &__title {
-    color: #0654ae;
+    color: $color-blue;
   }
   &__menu {
     line-height: 2em;

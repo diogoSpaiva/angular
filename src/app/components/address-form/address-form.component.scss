@@ -1,0 +1,106 @@
+@import "./../../../assets/scss/theme.scss";
+
+form {
+  margin: 2em 0;
+}
+
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+
+label,
+input:not([type="checkbox"]) {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input:not([type="checkbox"]) {
+  border: 1px solid #ccc;
+  font-family: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0.5em 1em;
+  cursor: text;
+}
+
+input:not([type="checkbox"]):focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+
+label {
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: #888888;
+}
+
+input:not([type="checkbox"]):placeholder-shown + label {
+  cursor: text;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(1rem, 2.15rem) scale(1);
+}
+
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+input:not([type="checkbox"]):focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+input:not([type="checkbox"]):not(:placeholder-shown) + label,
+input:not([type="checkbox"]):focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+  color: #212529;
+}
+
+.form-check{
+  input {
+    opacity: 0;
+    &:checked + label:before {
+      background-color: $color-blue;
+      border-color: $color-blue;
+    }
+    &:checked + label:after {
+      content: "\00AC";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 0.28em;
+      -webkit-appearance: none;
+      color: #fff;
+      transform: rotate(135deg);
+      font-size: 1.2rem;
+    }
+  }
+  label {
+    &:before {
+      content: "";
+      border: 2px solid #888;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      -webkit-appearance: none;
+    }
+  }
+
+}
+
+
+
+
+button {
+  color: #fff;
+  background-color: $color-blue;
+}
