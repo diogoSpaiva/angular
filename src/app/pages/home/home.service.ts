@@ -13,7 +13,7 @@ export class HomeService {
 
 
   getListMovies() {
-    return this.httpClient.get<any>(`${SERVER_API_URL}/4/list/1?language=pt-BR&page=1`);
+    return this.httpClient.get<any>(`${SERVER_API_URL}/3/movie/upcoming?language=pt-BR&page=1`);
   }
 
 }
