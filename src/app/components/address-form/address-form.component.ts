@@ -13,6 +13,9 @@ export class AddressFormComponent implements OnInit {
   @Input() bill = {};
   @Output() addCompanion = new EventEmitter();
 
+  states = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
+  countries = ["Argentina", "Bolívia", "Brasil", "Chile", "Colômbia", "Costa", "Cuba", "El_Salvador", "Equador", "Guatemala", "Haiti", "Honduras", "México", "Nicarágua", "Panamá", "Paraguai", "Peru", "Quíchua", "República_Dominicana", "Uruguai", "Venezuela"];
+
   constructor(
     private formBuilder: FormBuilder,
     private formService: FormService,
@@ -74,6 +77,16 @@ export class AddressFormComponent implements OnInit {
       });
   }
 
+  getCep(cep) {
+    this.formService.getCep(this.form.value.zipCode).subscribe(response => {
+      console.log(response);
+      if (response.cep) {
+        this.form.controls['state'].setValue(response.uf)
+        this.form.controls['address'].setValue(`${response.logradouro},${response.bairro},${response.localidade}`)
+      }
+    })
+  }
+
   onSubmit() {
     if (this.form.valid) {
       const obj = { bill: this.bill, info: this.form.value }
@@ -84,4 +97,6 @@ export class AddressFormComponent implements OnInit {
   }
 
 }
+
+
 

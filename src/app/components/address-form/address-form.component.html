@@ -66,7 +66,7 @@
 
   <h5 class="mt-5">DADOS DA ENTREGA</h5>
   <div class="field">
-    <input type="text" id="fieldZipCode" placeholder=" " formControlName="zipCode" mask="00000-000">
+    <input type="text" id="fieldZipCode" placeholder=" " (blur)="getCep()" formControlName="zipCode" mask="00000-000">
     <label for="fieldZipCode">CEP</label>
   </div>
   <div class="field">
@@ -76,19 +76,19 @@
   <div class="form-group">
     <label for="fieldCountry">País</label>
     <select class="form-control" id="fieldCountry" formControlName="country">
-      <option>1</option>
-      <option>2</option>
+      <option value="null">Selecione seu país</option>
+      <option *ngFor="let country of countries">{{country}}</option>
     </select>
   </div>
   <div class="form-group">
     <label for="fieldState">Estado</label>
     <select class="form-control" id="fieldState" formControlName="state">
-      <option>1</option>
-      <option>2</option>
+      <option value="null">Selecione um estado</option>
+      <option *ngFor="let state of states">{{state}}</option>
     </select>
   </div>
   <div class="field">
-    <input type="text" id="fieldPhone" placeholder=" " formControlName="phone">
+    <input type="text" id="fieldPhone" placeholder=" " formControlName="phone" mask="(00) 00000-0000">
     <label for="fieldPhone">Telefone</label>
   </div>
   <div class="d-flex justify-content-end mt-5">

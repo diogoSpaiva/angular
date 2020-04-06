@@ -21,4 +21,8 @@ export class FormService {
     return this.httpClient.post<any>(`http://localhost/reserva`, obj, { headers });
   }
 
+  getCep(cep){
+    return this.httpClient.get<any>(`https://proxier.now.sh/api?url=https://viacep.com.br/ws/${cep}/json`);
+  }
+
 }

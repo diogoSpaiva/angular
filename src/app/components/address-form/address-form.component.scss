@@ -103,4 +103,7 @@ input:not([type="checkbox"]):focus + label {
 button {
   color: #fff;
   background-color: $color-blue;
+  &:disabled{
+    background-color: desaturate($color-blue, 50%);
+  }
 }
