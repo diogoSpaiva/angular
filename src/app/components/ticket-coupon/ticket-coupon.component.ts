@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class TicketCouponComponent {
 
-  @Input() public movie: [];
-  @Input() public bill: [];
+  @Input() public movie: any;
+  @Input() public bill: any;
 
   constructor() { }
 

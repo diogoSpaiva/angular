@@ -77,7 +77,7 @@ export class AddressFormComponent implements OnInit {
       });
   }
 
-  getCep(cep) {
+  getCep() {
     this.formService.getCep(this.form.value.zipCode).subscribe(response => {
       console.log(response);
       if (response.cep) {

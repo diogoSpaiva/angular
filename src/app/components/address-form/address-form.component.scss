@@ -97,8 +97,13 @@ input:not([type="checkbox"]):focus + label {
 
 }
 
-
-
+select {
+  border: 1px solid #ccc;
+    font-family: inherit;
+    border-radius: 0;
+    padding: 0.5em 1em!important;
+    height: 41px;
+}
 
 button {
   color: #fff;
